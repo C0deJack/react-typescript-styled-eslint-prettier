@@ -3,26 +3,17 @@ import styled from "styled-components";
 
 const StyledTab = styled.li`
     list-style: none;
-    background-color: #55ff44;
-    font-size: 34px;
-
-    text-decoration: none;
-    display: flex;
-    align-items: flex-start;
-
-    :active {
-        background-color: blue;
-    }
+    padding: 1rem;
 
     a {
-        color: pink;
+        text-decoration: none;
         font-size: 22px;
-        background-color: blueviolet;
+        color: #000;
     }
 `;
 
 interface TabProps {
-    link: string | undefined;
+    link: string;
     linkName: string;
 }
 

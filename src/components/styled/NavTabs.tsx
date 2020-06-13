@@ -3,17 +3,18 @@ import Tab from '../styled/Tab';
 import styled from 'styled-components';
 
 const StyledNavTabs = styled.nav`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    ul {
+        display: flex;
+    }
 `;
 
 export default function NavTabs() {
     return (
         <StyledNavTabs>
-            <ul>
-                <Tab link={'/'} linkName={'HOME TAB'} />
-                <Tab link={'/one'} linkName={'PAGE ONE TAB'} />
+            <ul role='navigation'>
+                <Tab link={'/'} linkName={'HOME'} />
+                <Tab link={'/one'} linkName={'PAGE ONE'} />
+                <Tab link={'/two'} linkName={'PAGE TWO'} />
             </ul>
         </StyledNavTabs>
     )

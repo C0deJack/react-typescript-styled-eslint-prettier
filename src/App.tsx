@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/container/Header';
 import Home from './components/container/Home';
 import PageOne from './components/container/PageOne';
+import PageTwo from "./components/container/PageTwo";
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
             <Header />
             <Switch>
                 <Route exact={true} path='/' component={Home} />
-                <Route exact path={'/:one'} component={PageOne} />
+                <Route exact path={'/one'} component={PageOne} />
+                <Route exact path={'/two'} component={PageTwo} />
                 <Route component={Home} />
             </Switch>
         </Router>
