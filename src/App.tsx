@@ -1,14 +1,21 @@
 import React from "react";
-import NextButton from './components/styled/NextButton'
-import Title from "./components/styled/Title";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import Header from './components/container/Header';
+import Home from './components/container/Home';
+import PageOne from './components/container/PageOne';
 
 
 function App() {
     return (
-        <div className="App">
-            <Title>Cheesy</Title>
-            <NextButton>Next</NextButton>
-        </div>
+        <Router>
+            <Header />
+            <Switch>
+                <Route exact={true} path='/' component={Home} />
+                <Route exact path={'/:one'} component={PageOne} />
+                <Route component={Home} />
+            </Switch>
+        </Router>
     );
 }
 
