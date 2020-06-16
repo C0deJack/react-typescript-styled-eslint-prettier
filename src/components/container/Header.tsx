@@ -9,6 +9,11 @@ import { Theme } from '../../styles/theme';
 const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
+
+    div {
+        display: flex;
+    }
 `;
 
 type HeaderProps = {
