@@ -25,7 +25,8 @@ export const GlobalStyles = createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		
-		background-color: ${props => props.theme.theme_background_color};
-    	color: ${props => props.theme.theme_color};
+		/* global styles set as light theme initially */
+		background-color: ${props => props.theme.color.light};
+    	color: ${props => props.theme.color.dark};
 	}
 `;
