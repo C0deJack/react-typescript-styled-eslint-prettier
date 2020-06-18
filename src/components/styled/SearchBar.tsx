@@ -11,6 +11,7 @@ const StyledSearchBar = styled.div`
     input {
         outline: none;
         border: ${props => props.theme.color.light} solid;
+        color: ${props => props.theme.color.dark};
         background-color: ${props => props.theme.color.light};
     }
 

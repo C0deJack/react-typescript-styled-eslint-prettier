@@ -8,7 +8,7 @@ const StyledTab = styled.li`
     a {
         text-decoration: none;
         font-size: 22px;
-        color: ${({ theme }) => theme.brand_color_magenta};
+        color: ${props => props.theme.color.dark};
     }
 `;
 

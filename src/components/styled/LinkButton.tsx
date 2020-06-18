@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 
 const StyledLink = styled.a`
-    background-color: ${({ theme }) => theme.brand_color_magenta};
-    color: ${({ theme }) => theme.brand_color_blue};
+    background-color: ${({ theme }) => theme.color.secondary};
+    color: ${({ theme }) => theme.color.primary};
     text-decoration: none;
 
     /* bootstrap styles */
@@ -23,7 +23,7 @@ const StyledLink = styled.a`
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
     :hover {
-        background-color: ${({ theme }) => theme.brand_color_teal};
+        background-color: ${({ theme }) => theme.color.info};
         text-decoration: none;
     }
 `;
