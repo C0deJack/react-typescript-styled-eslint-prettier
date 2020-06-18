@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import isError from './isError';
-import isLoading from './isLoading';
+import themeType from './themeType';
 
 const rootReducer = combineReducers<any>({
-	isLoading,
-	isError,
+	themeType,
 });
 
 export default rootReducer;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { ThemeType, MyDispatch } from '../../types';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { setTheme } from '../../actions/setTheme';
+import { setThemeType } from '../../actions/setThemeType';
 
 const StyledThemeToggle = styled.div`
 
@@ -46,19 +46,19 @@ const StyledThemeToggle = styled.div`
 `;
 
 export interface ThemeToggleDispatches {
-	setTheme: (themeType: ThemeType) => void;
+	setThemeType: (themeType: ThemeType) => void;
 }
 
 export class ThemeToggle extends Component<ThemeToggleDispatches> {
 
     public handleThemeChange = (checkboxValue:ThemeType) => {
-		this.props.setTheme(checkboxValue);
+		this.props.setThemeType(checkboxValue);
 	}
 
     render() {
         return (
             <StyledThemeToggle>
-                <input id="checkbox" type="checkbox" value='true' onChange={e => this.handleThemeChange(e.target.value as ThemeType)}/>
+                <input id="checkbox" type="checkbox" value='dark' onChange={e => this.handleThemeChange(e.target.value as ThemeType)}/>
                 <label htmlFor="checkbox" className="label">
                     <svg className='moon' width="32px" height="32px" viewBox="7 6.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" >
                         <title>Light theme</title>
@@ -77,14 +77,14 @@ export class ThemeToggle extends Component<ThemeToggleDispatches> {
 
 const mapDispatchToProps = (dispatch:MyDispatch):ThemeToggleDispatches => {
 	return {
-		setTheme(themeType:ThemeType) {
+		setThemeType(themeType:ThemeType) {
 			dispatch(
-				setTheme(themeType),
+				setThemeType(themeType),
 			);
 		},
 	};
 };
 
-const connector = connect(mapDispatchToProps)(ThemeToggle);
+const connector = connect(null, mapDispatchToProps)(ThemeToggle);
 
 export default connector;
