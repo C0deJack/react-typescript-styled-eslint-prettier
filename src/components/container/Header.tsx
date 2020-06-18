@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Logo from '../styled/Logo';
 import ThemeToggle from '../styled/ThemeToggle';
 import SearchBar from '../styled/SearchBar';
-import { Theme } from '../../styles/theme';
 
 const StyledHeader = styled.header`
     display: flex;
@@ -16,18 +15,14 @@ const StyledHeader = styled.header`
     }
 `;
 
-type HeaderProps = {
-    setTheme: React.Dispatch<React.SetStateAction<Theme>>;
-};
-
-export default function Header(props: HeaderProps) {
+export default function Header() {
 	
     return (
         <StyledHeader>
             <Logo />
             <div>
                 <SearchBar />
-                <ThemeToggle setTheme={props.setTheme} />
+                <ThemeToggle />
             </div>
         </StyledHeader>
     );

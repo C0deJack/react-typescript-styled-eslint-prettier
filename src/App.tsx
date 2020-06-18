@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './styles/global';
@@ -13,15 +13,13 @@ import Footer from './components/container/Footer';
 
 function App() {
 
-    const [theme, setTheme] = useState(lightTheme);
-
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={lightTheme}>
             <>
                 <GlobalStyles />
                 <Router>
                     {/* We pass the setTheme function (lift state up) to the Header */}
-                    <Header setTheme={setTheme} />
+                    <Header />
                     <NavBar />
                     <Switch>
                         <Route exact={true} path="/" component={Home} />

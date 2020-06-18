@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledSearchBar = styled.div`
     margin: 0 1rem;
     padding: 5px 10px;
+    height: 37px;
     background-color: ${props => props.theme.color.light};
     border-radius: 100px;
     border: ${props => props.theme.color.dark} solid 2px;
