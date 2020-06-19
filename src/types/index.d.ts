@@ -1,5 +1,6 @@
 import { AnyAction } from 'redux';
 import { ThunkDispatch} from 'redux-thunk';
+import { Theme } from '../styles/theme';
 
 export interface Action<T> {
 	type: string;
@@ -15,11 +16,10 @@ export type IsError = boolean;
 export type ThemeType = 'light' | 'dark';
 
 
-
 export interface AppState {
     isLoading: IsLoading;
     isError: IsError;
-    themeType: ThemeType;
+    theme: Theme;
 }
 
 export type MyDispatch = ThunkDispatch<AppState, void, AnyAction>;

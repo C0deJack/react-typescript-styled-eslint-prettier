@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './styles/global';
-import { lightTheme, darkTheme } from './styles/theme';
+import { Theme } from './styles/theme';
 
 import Header from './components/container/Header';
 import NavBar from './components/styled/NavBar';
@@ -11,17 +11,17 @@ import Home from './components/container/Home';
 import PageOne from './components/container/PageOne';
 import PageTwo from './components/container/PageTwo';
 import Footer from './components/container/Footer';
-import { ThemeType, AppState } from './types';
+import { AppState } from './types';
 
 interface AppProps {
-    themeType: ThemeType;
+    theme: Theme;
 }
 
 export class App extends Component<AppProps> {
-
-    render () {
+    render() {
+        const theme = this.props.theme;
         return (
-            <ThemeProvider theme={this.props.themeType === 'light' ? lightTheme : darkTheme}>
+            <ThemeProvider theme={theme}>
                 <>
                     <GlobalStyles />
                     <Router>
@@ -39,10 +39,10 @@ export class App extends Component<AppProps> {
             </ThemeProvider>
         );
     }
-};
+}
 
-const mapStateToProps = (state:AppState):AppProps => ({
-    themeType: state.themeType,
+const mapStateToProps = (state: AppState): AppProps => ({
+    theme: state.theme,
 });
 
 export default connect(mapStateToProps)(App);

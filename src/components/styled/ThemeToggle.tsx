@@ -51,14 +51,18 @@ export interface ThemeToggleDispatches {
 
 export class ThemeToggle extends Component<ThemeToggleDispatches> {
 
-    public handleThemeChange = (checkboxValue:ThemeType) => {
-		this.props.setThemeType(checkboxValue);
+    public handleThemeChange = (checkboxValue: boolean) => {
+        if (checkboxValue) {
+            this.props.setThemeType('dark');
+        } else {
+            this.props.setThemeType('light');
+        }
 	}
 
     render() {
         return (
             <StyledThemeToggle>
-                <input id="checkbox" type="checkbox" value='dark' onChange={e => this.handleThemeChange(e.target.value as ThemeType)}/>
+                <input id="checkbox" type="checkbox" onChange={e => this.handleThemeChange(e.target.checked)}/>
                 <label htmlFor="checkbox" className="label">
                     <svg className='moon' width="32px" height="32px" viewBox="7 6.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" >
                         <title>Light theme</title>
