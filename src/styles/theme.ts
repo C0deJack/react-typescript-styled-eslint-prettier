@@ -35,7 +35,7 @@ export const darkTheme: Theme = {
     info: '#00CCC6', // teal
     light: '#282828',
     dark: '#dadada',
-    grey: '#bdbdbd',
+    grey: '#4e4e4e',
     muted: '#eee',
   }
 };
