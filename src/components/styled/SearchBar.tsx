@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import Autocomplete from '../styled/Autocomplete';
 
 const StyledSearchBar = styled.div`
+    position: relative;
     margin: 0 1rem;
     padding: 5px 10px;
     height: 37px;
@@ -14,6 +16,7 @@ const StyledSearchBar = styled.div`
         border: ${props => props.theme.color.light} solid;
         color: ${props => props.theme.color.dark};
         background-color: ${props => props.theme.color.light};
+        font-size: 1.1rem;
     }
 
     button {
@@ -36,7 +39,20 @@ export default function SearchBar() {
 
     return (
         <StyledSearchBar>
-            <input type='text' placeholder='Search'/>
+            <Autocomplete
+                suggestions={[
+                "Alligator",
+                "Bask",
+                "Crocodilian",
+                "Death Roll",
+                "Eggs",
+                "Jaws",
+                "Reptile",
+                "Solitary",
+                "Tail",
+                "Wetlands"
+                ]}
+            />
             <button type='button'>
                 <svg width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <title>Search</title>

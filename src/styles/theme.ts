@@ -19,6 +19,7 @@ export const lightTheme = {
     info: '#00CCC6', // teal
     light: '#dadada',
     dark: '#282828',
+    grey: '#bdbdbd',
     muted: '#eee',
   }
 };
@@ -34,6 +35,7 @@ export const darkTheme: Theme = {
     info: '#00CCC6', // teal
     light: '#282828',
     dark: '#dadada',
+    grey: '#bdbdbd',
     muted: '#eee',
   }
 };
