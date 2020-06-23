@@ -26,31 +26,24 @@ const StyledList = styled.ul`
     }
 `;
 
-// interface AutocompleteProps {
-// 	suggestions: Array<string>;
-// }
+interface AutocompleteProps {
+	suggestions: Array<string>;
+}
 
-// interface AutocompleteState {
-// 	state: {
-// 		activeSuggestion: number;
-// 		filteredSuggestions: Array<string>;
-// 		showSuggestions: boolean;
-// 		userInput: string;
-// 	};
-// }
+interface AutocompleteState {
+    activeSuggestion: number;
+    filteredSuggestions: Array<string>;
+    showSuggestions: boolean;
+    userInput: string;
+}
 
-// class Autocomplete extends Component<AutocompleteProps> {
-class Autocomplete extends Component {
-    // 	// static propTypes = {
-    // 	//   suggestions: PropTypes.instanceOf(Array)
-    // 	// };
+class Autocomplete extends Component<AutocompleteProps, AutocompleteState> {
 
     static defaultProps = {
         suggestions: [],
     };
 
-    // constructor(props:AutocompleteProps) {
-    constructor(props) {
+    constructor(props:AutocompleteProps) {
         super(props);
 
         this.state = {
@@ -65,8 +58,7 @@ class Autocomplete extends Component {
         };
     }
 
-    // onChange = (e:React.FormEvent<HTMLInputElement>) => {
-    onChange = (e) => {
+    onChange = (e:React.FormEvent<HTMLInputElement>) => {
         const { suggestions } = this.props;
         const userInput = e.currentTarget.value;
 
@@ -84,7 +76,7 @@ class Autocomplete extends Component {
         });
     };
 
-    onClick = (e) => {
+    onClick = (e:React.MouseEvent<HTMLLIElement>) => {
         this.setState({
             activeSuggestion: 0,
             filteredSuggestions: [],
@@ -93,7 +85,7 @@ class Autocomplete extends Component {
         });
     };
 
-    onKeyDown = (e) => {
+    onKeyDown = (e:React.KeyboardEvent<HTMLElement>) => {
         const { activeSuggestion, filteredSuggestions } = this.state;
 
         // User pressed the enter key
